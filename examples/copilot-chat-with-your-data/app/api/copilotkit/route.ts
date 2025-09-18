@@ -1,12 +1,17 @@
 import {
   CopilotRuntime,
   OpenAIAdapter,
+  GroqAdapter,
   copilotRuntimeNextJSAppRouterEndpoint,
 } from '@copilotkit/runtime';
 import { tavily } from '@tavily/core';
 import { NextRequest } from 'next/server';
+import { Groq } from 'groq-sdk';
 
-const serviceAdapter = new OpenAIAdapter({});
+
+const groq = new Groq({ apiKey: process.env["GROQ_API_KEY"] });
+const serviceAdapter = GroqAdapter({ groq, model: "gemma2-9b-it" });
+// const serviceAdapter = new OpenAIAdapter({});
 const runtime = new CopilotRuntime({
   actions: () => {
     return [

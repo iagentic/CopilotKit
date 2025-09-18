@@ -48,6 +48,8 @@ Transform your data visualization experience with an AI-powered dashboard assist
      
      # Using npm
      npm install
+
+     npm i --legacy-peer-deps
      ```
    </details>
 
