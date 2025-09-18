@@ -10,7 +10,7 @@ import { Groq } from 'groq-sdk';
 
 
 const groq = new Groq({ apiKey: process.env["GROQ_API_KEY"] });
-const serviceAdapter = GroqAdapter({ groq, model: "gemma2-9b-it" });
+const serviceAdapter = new GroqAdapter({ groq, model: "gemma2-9b-it" });
 // const serviceAdapter = new OpenAIAdapter({});
 const runtime = new CopilotRuntime({
   actions: () => {
